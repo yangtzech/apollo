@@ -1,8 +1,17 @@
 load("//tools/install:install.bzl", "install", "install_src_files")
 load("//third_party/gpus:common.bzl", "if_gpu")
+load("@hedron_compile_commands//:refresh_compile_commands.bzl", "refresh_compile_commands")
 
 package(
     default_visibility = ["//visibility:public"],
+)
+
+# Generate clangd's compilation database without committing generated output.
+refresh_compile_commands(
+    name = "refresh_compile_commands",
+    targets = ["//cyber/... union //modules/... except //modules/perception/common/inference/migraphx/..."],
+    exclude_external_sources = True,
+    exclude_headers = "external",
 )
 
 exports_files([

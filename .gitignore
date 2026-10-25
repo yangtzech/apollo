@@ -85,3 +85,10 @@ tools/FlameGraph
 modules/studio_connector
 
 #WORKSPACE
+
+# Local AEM workspace state and generated compilation database
+/.aem/
+/.env
+/dev/
+/external
+/compile_commands.json
