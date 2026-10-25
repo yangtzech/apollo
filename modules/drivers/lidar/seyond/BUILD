@@ -31,10 +31,8 @@ apollo_component(
         "//modules/drivers/lidar/seyond/proto:seyond_config_proto",
         "//modules/drivers/lidar/seyond/proto:seyond_proto",
         "//modules/drivers/lidar/common:lidar_common",
+        "@seyond_sdk//:client_sdk",
     ],
-    linkopts = [
-        "-linnoclientsdk",
-    ]
 )
 
 apollo_package()

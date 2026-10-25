@@ -59,6 +59,7 @@ apollo_cc_test(
     deps = [
         ":rss_decider_lib",
         "@ad_rss_lib//:ad_rss",
+        "@ad_rss_test_support//:test_support",
         "@com_google_googletest//:gtest_main",
     ],
 )

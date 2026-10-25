@@ -102,3 +102,21 @@ load("@com_github_grpc_grpc//bazel:grpc_extra_deps.bzl", "grpc_extra_deps")
 
 grpc_extra_deps()
 #######################################APOLLO#######################################
+
+# Driver SDK and test headers that are absent from the older AEM packages.
+http_archive(
+    name = "seyond_sdk",
+    build_file = "//third_party/seyond_sdk:seyond_sdk.BUILD",
+    sha256 = "4a35fec5230aba868e2e7656ec0fc0794f68c3c93b63afd8d9b8be47c4b7addf",
+    strip_prefix = "inno-lidar-sdk-73a24e98c283391b890cfd106e5cc13e9c9d7f5b",
+    type = "tar.gz",
+    urls = ["https://codeload.github.com/Seyond-Inc/inno-lidar-sdk/tar.gz/73a24e98c283391b890cfd106e5cc13e9c9d7f5b"],
+)
+
+http_archive(
+    name = "ad_rss_test_support",
+    build_file = "//third_party/ad_rss_lib:test_support.BUILD",
+    sha256 = "10c161733a06053f79120f389d2d28208c927eb65759799fb8d7142666b61b9f",
+    strip_prefix = "ad-rss-lib-1.1.0",
+    urls = ["https://apollo-system.cdn.bcebos.com/archive/6.0/v1.1.0.tar.gz"],
+)
